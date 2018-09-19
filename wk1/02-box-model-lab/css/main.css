@@ -1,0 +1,115 @@
+
+/*
+Colors to use:
+dark blue: #06365f
+light blue: #1c5380
+*/
+
+body {
+  font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-image: url("../images/bgtile.png");
+  background-repeat: repeat-x;
+}
+
+#content {
+  width: 1040px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 1em;
+}
+
+#phones {
+  display: inline-block;
+  width: 38%;
+  text-align: center;
+}
+
+h1 {
+  color: #06365f
+}
+
+#right-side {
+  display: inline-block;
+  width: 45%;
+  height: 100%;
+  margin: 0 auto;
+  vertical-align: top;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  text-decoration-color: #052949;
+  font-size: .75em;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #688dac;
+}
+
+#appStore {
+  text-align: center;
+}
+
+#logo {
+  display: inline-block;
+  text-align: center;
+  width: 60%;
+}
+
+#loginBtn {
+  display: inline;
+  white-space: nowrap;
+  align-content: right;
+}
+
+#paragraph {
+  background-image: url("../images/frame.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 1.5em;
+}
+
+button {
+  /* background-image: url("../images/bgtile.png"); */
+  background-image: linear-gradient(#6b99be, #3f688d);
+  /* background-repeat: repeat-x; */
+  /* max-height: auto; */
+  /* background-color: skyblue; */
+  border: 1px solid #06365f;
+  border-radius: 5%;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 9px;
+  line-height: 16px;
+  
+  /* text-decoration: none; */
+}
+
+#instagramLogo {
+  width: 90%;
+}
+
+div {
+  vertical-align: middle;
+}
+
+#logoAndLogin {
+  text-align: center;
+}
+
+/* #houseimage {
+  vertical-align: middle;
+  display: block;
+} */
+
+/* div, main {
+  border: 1px solid red !important;
+} */

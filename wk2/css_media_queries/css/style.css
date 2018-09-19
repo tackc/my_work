@@ -1,0 +1,246 @@
+body {
+      margin: auto;
+}
+
+main {
+      display: grid;
+      width: 100vw;
+      margin: auto;
+      grid-template-columns: 1fr;
+      grid-template-rows: 8vh 70vh 42vh 42vh 42vh 42vh 70vh 42vh 42vh 42vh 42vh 70vh 236vh;
+      grid-template-areas:    "nav"
+                              "featured1"
+                              "item1"
+                              "item2"
+                              "item3"
+                              "item4"
+                              "featured2"
+                              "item5"
+                              "item6"
+                              "item7"
+                              "item8"
+                              "featured3"
+                              "footer"
+}
+
+nav {
+      grid-area: nav;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.hamburger {
+      order: 1;
+}
+
+.search {
+      order: 2;
+}
+
+.logo {
+      order: 3;      
+}
+
+.cart {
+      order: 4;      
+}
+
+.signIn {
+      order: 5;      
+}
+
+footer {
+      background-color: rgb(239, 239, 239);
+      grid-area: footer;
+      background-image: url("../img/footer-mobile.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+/* .products {
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+} */
+
+#featured1 {
+      grid-area: featured1;
+      background-image: url("../img/featured1-mobile.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#featured2 {
+      grid-area: featured2;
+      background-image: url("../img/featured2-mobile.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#featured3 {
+      grid-area: featured3;
+      background-image: url("../img/featured3-mobile.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#item1 {
+      grid-area: item1;
+      background-image: url("../img/item1.png");
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#item2 {
+      grid-area: item2;
+      background-image: url("../img/item2.png");
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#item3 {
+      grid-area: item3;
+      background-image: url("../img/item3.png");
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#item4 {
+      grid-area: item4;
+      background-image: url("../img/item4.png");
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#item5 {
+      grid-area: item5;
+      background-image: url("../img/item5.png");
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#item6 {
+      grid-area: item6;
+      background-image: url("../img/item6.png");
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#item7 {
+      grid-area: item7;
+      background-image: url("../img/item7.png");
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+#item8 {
+      grid-area: item8;
+      background-image: url("../img/item8.png");
+      margin: 15px;
+      background-repeat: no-repeat;
+      background-size: contain;
+}
+
+
+
+@media screen and (min-width: 540px) {
+      body {
+            margin: auto;
+      }
+      main {
+            display: grid;
+            width: 100vw;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 8vh 100vh 50vh 50vh 100vh 50vh 50vh 100vh 100vh;
+            grid-template-areas:    "nav nav"
+                                    "featured1 featured1"
+                                    "item1 item2"
+                                    "item3 item4"
+                                    "featured2 featured2"
+                                    "item5 item6"
+                                    "item7 item8"
+                                    "featured3 featured3"
+                                    "footer footer";
+      }
+      #featured1 {
+            grid-area: featured1;
+            background-image: url("../img/featured1-medium.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+      
+      #featured2 {
+            grid-area: featured2;
+            background-image: url("../img/featured2-medium.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+      
+      #featured3 {
+            grid-area: featured3;
+            background-image: url("../img/featured3-medium.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+      footer {
+            background-color: rgb(239, 239, 239);
+            grid-area: footer;
+            background-image: url("../img/footer-medium.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+      }
+      
+}
+
+/* ------------If screen width is more than 1084px wide------------- */
+@media screen and (min-width: 1084px) {
+      main {
+            display: grid;
+            width: 100vw;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 8vh 60vh 45vh 60vh 45vh 60vh 50vh;
+            grid-template-areas:    "nav nav nav nav"
+                                    "featured1 featured1 featured1 featured1"
+                                    "item1 item2 item3 item4"
+                                    "featured2 featured2 featured2 featured2"
+                                    "item5 item6 item7 item8"
+                                    "featured3 featured3 featured3 featured3"
+                                    "footer footer footer footer";
+      }      
+      #featured1 {
+            grid-area: featured1;
+            background-image: url("../img/featured1-large.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+      
+      #featured2 {
+            grid-area: featured2;
+            background-image: url("../img/featured2-large.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+      
+      #featured3 {
+            grid-area: featured3;
+            background-image: url("../img/featured3-large.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+
+      footer {
+            background-color: rgb(239, 239, 239);
+            grid-area: footer;
+            background-image: url("../img/footer-large.png");
+      }
+}
