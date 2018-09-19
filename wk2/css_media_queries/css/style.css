@@ -1,4 +1,4 @@
-body {
+body, html {
       margin: auto;
 }
 
@@ -6,6 +6,7 @@ main {
       display: grid;
       width: 100vw;
       margin: auto;
+      text-align: center;
       grid-template-columns: 1fr;
       grid-template-rows: 8vh 70vh 42vh 42vh 42vh 42vh 70vh 42vh 42vh 42vh 42vh 70vh 236vh;
       grid-template-areas:    "nav"
@@ -23,29 +24,26 @@ main {
                               "footer";
 }
 
-nav {
-      grid-area: nav;
-}
+
 
 #navContents {
+      grid-area: nav;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: space-between;
       align-items: center;
-      height: auto;
+      height: 100%;
 }
 
-.hamburger {
+#hamburger {
       order: 1;
       background-image: url("../img/hamburger.png");
       background-repeat: no-repeat;
       /* background-size: contain; */
-      flex-basis: auto;
-      height: auto;
 }
 
-.search {
+#search {
       order: 2;
       background-image: url("../img/search.png");
       background-repeat: no-repeat;
@@ -53,15 +51,15 @@ nav {
       flex-basis: auto;
 }
 
-.logo {
+#logo {
       order: 3;
       background-image: url("../img/logo.png");
       background-repeat: no-repeat;
-      /* background-size: contain; */
+      background-size: contain;
       flex-basis: auto;      
 }
 
-.cart {
+#cart {
       order: 4;
       background-image: url("../img/shoppingCart.png");
       background-repeat: no-repeat;
@@ -69,7 +67,7 @@ nav {
       flex-basis: auto;      
 }
 
-.signIn {
+#signIn {
       order: 5;
       background-image: url("../img/signIn.png");
       background-repeat: no-repeat;
@@ -176,6 +174,11 @@ footer {
       background-size: contain;
 }
 
+products {
+      margin: auto;
+      height: 1vh;
+}
+
 
 
 @media screen and (min-width: 540px) {
@@ -224,6 +227,7 @@ footer {
             background-repeat: no-repeat;
             background-size: contain;
       }
+      
       
 }
 
