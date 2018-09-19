@@ -20,36 +20,61 @@ main {
                               "item7"
                               "item8"
                               "featured3"
-                              "footer"
+                              "footer";
 }
 
 nav {
       grid-area: nav;
+}
+
+#navContents {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: space-between;
       align-items: center;
+      height: auto;
 }
 
 .hamburger {
       order: 1;
+      background-image: url("../img/hamburger.png");
+      background-repeat: no-repeat;
+      /* background-size: contain; */
+      flex-basis: auto;
+      height: auto;
 }
 
 .search {
       order: 2;
+      background-image: url("../img/search.png");
+      background-repeat: no-repeat;
+      /* background-size: contain; */
+      flex-basis: auto;
 }
 
 .logo {
-      order: 3;      
+      order: 3;
+      background-image: url("../img/logo.png");
+      background-repeat: no-repeat;
+      /* background-size: contain; */
+      flex-basis: auto;      
 }
 
 .cart {
-      order: 4;      
+      order: 4;
+      background-image: url("../img/shoppingCart.png");
+      background-repeat: no-repeat;
+      /* background-size: contain; */
+      flex-basis: auto;      
 }
 
 .signIn {
-      order: 5;      
+      order: 5;
+      background-image: url("../img/signIn.png");
+      background-repeat: no-repeat;
+      /* background-size: contain; */
+      flex-basis: auto;      
 }
 
 footer {
