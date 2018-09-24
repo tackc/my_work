@@ -18,6 +18,25 @@ html, body {
       border-radius: 50px;
 }
 
+#start {
+      margin: auto;
+}
+
+button {
+      background-color: #ededed;
+      border: 0;
+      color: black;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.2em;
+      line-height: 2;
+      margin-top: 1.5rem;
+      width: 100%;
+      min-width: 6rem;
+      border-radius: 0.75rem;
+      min-height: 2rem;
+}
+
 #cyan {
       background-color: #00AEEF;
 }
