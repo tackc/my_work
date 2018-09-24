@@ -1,10 +1,11 @@
 /*----------------------------- constants -----------------------------*/
-const COLORS = ['cyan', 'magenta', 'yellow' 'gray']
+
 
 /*----------------------------- app's state (variables) -----------------------------*/
 var level;
 var computerMove = [];
 var playerMove = [];
+
 
 /*----------------------------- cached element references -----------------------------*/
 var cyan = document.getElementById('cyan');
@@ -12,6 +13,14 @@ var magenta = document.getElementById('magenta');
 var yellow = document.getElementById('yellow');
 var gray = document.getElementById('gray');
 var startBtn = document.getElementById('start');
+
+var colors = [cyan, magenta, yellow, gray];
+var colorsToPlay = [];
+
+var cyanSound = document.getElementById('cyanSound');
+var magentaSound = document.getElementById('magentaSound');
+var yellowSound = document.getElementById('yellowSound');
+var graySound = document.getElementById('graySound');
 
 /*----------------------------- event listeners -----------------------------*/
 cyan.addEventListener('click', );
@@ -23,31 +32,31 @@ startBtn.addEventListener('click', );
 /*----------------------------- functions -----------------------------*/
 //Upon clicking "Start" button
 function computerMove() {
-      //Game randomly selects 1 of 4 buttons
-      
-      //Selected button id (1-4) is pushed into array & stored in var 
-                  //Number of items in array increases by 1 each round of play (max 50 items in array)
-            //Chosen button "lights up" and chosen sound is played
-            //Counter displays current level
+      for (var i = 0; i < computerMove.length; i++) {
+
+      }
+      //Chosen button "lights up" and chosen sound is played
+      //Counter displays current level
 }
 
+//Selected color id (1-4) is pushed into array & stored in var
 function generateRandomColors() {
-      
-      computerMove = Math.floor(Math.random() * 5);
-      console.log(computerMove);
+      var arr = [];
+      for (var i = 0; i < 50; i++) {
+            arr.push(randomColor());
+      }
+      console.log(arr);
+      computerMove = arr;
+}
+//Computer randomly selects 1 of 4 colors
+function randomColor() {
+      computerMove = Math.floor(Math.random() * 4);
+      return computerMove;
 }
       
-
-
 
 
 //counter that displays number of successful plays
-
-
-
-
-
-
 
 //Buttons (hamburger menu)
 
