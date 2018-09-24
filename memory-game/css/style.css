@@ -1,4 +1,51 @@
 html, body {
-      margin: 0;
-      padding: 0;
+      margin: 0 auto;
+      max-width: 800px;
+      max-height: 800px;
+      background-color: #424242;
+}
+
+.wrapper {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-auto-rows: 250px;
+      grid-auto-columns: 250px;
+      margin-top: 3em;
+      height: 1vh;
+    }
+
+.grid {
+      border-radius: 50px;
+}
+
+#cyan {
+      background-color: #00AEEF;
+}
+
+#cyan:active {
+      background-color: #80E7F9;
+}
+
+#gray {
+      background-color: #7C7C7C;
+}
+
+#gray:active {
+      background-color: #BCBCBC;
+}
+
+#magenta {
+      background-color: #EC008C;
+}
+
+#magenta:active {
+      background-color: #FC72D2;
+}
+
+#yellow {
+      background-color: #FFF200;
+}
+
+#yellow:active {
+      background-color: #FFFBCF;
 }
