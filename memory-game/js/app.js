@@ -1,10 +1,11 @@
 /*----------------------------- constants -----------------------------*/
-
+const COLORS = [cyan, magenta, yellow, gray];
 
 /*----------------------------- app's state (variables) -----------------------------*/
-var level;
+var levelCounter = 0;
 var computerMove = [];
 var playerMove = [];
+var currentGame;
 
 
 /*----------------------------- cached element references -----------------------------*/
@@ -14,7 +15,7 @@ var yellow = document.getElementById('yellow');
 var gray = document.getElementById('gray');
 var startBtn = document.getElementById('start');
 
-var colors = [cyan, magenta, yellow, gray];
+
 var colorsToPlay = [];
 
 var cyanSound = document.getElementById('cyanSound');
@@ -23,17 +24,28 @@ var yellowSound = document.getElementById('yellowSound');
 var graySound = document.getElementById('graySound');
 
 /*----------------------------- event listeners -----------------------------*/
-cyan.addEventListener('click', );
-magenta.addEventListener('click', );
-yellow.addEventListener('click', );
-gray.addEventListener('click', );
-startBtn.addEventListener('click', );
+cyan.addEventListener('click', playSound);
+magenta.addEventListener('click', playSound);
+yellow.addEventListener('click', playSound);
+gray.addEventListener('click', playSound);
+// startBtn.addEventListener('click', );
 
 /*----------------------------- functions -----------------------------*/
+//play appropriate sound for each button on click
+function playSound(evt) {
+      var sounds = {
+            cyan: cyanSound, 
+            magenta: magentaSound, 
+            yellow: yellowSound, 
+            gray: graySound
+            };
+      sounds[evt.target.id].play();
+}
+
 //Upon clicking "Start" button
 function computerMove() {
       for (var i = 0; i < computerMove.length; i++) {
-
+            computerMove[i].click();
       }
       //Chosen button "lights up" and chosen sound is played
       //Counter displays current level
