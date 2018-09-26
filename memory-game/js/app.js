@@ -1,5 +1,5 @@
 /*----------------------------- constants -----------------------------*/
-const COLORS = [cyan, magenta, yellow, gray];
+
 
 /*----------------------------- app's state (variables) -----------------------------*/
 var levelCounter = 0;
@@ -28,9 +28,21 @@ cyan.addEventListener('click', playSound);
 magenta.addEventListener('click', playSound);
 yellow.addEventListener('click', playSound);
 gray.addEventListener('click', playSound);
-// startBtn.addEventListener('click', );
+startBtn.addEventListener('click', startGame);
+
+document.addEventListener('keydown')
 
 /*----------------------------- functions -----------------------------*/
+//user clicks stored in array
+function playerMove(evt) {
+      playerMove.push(evt.target);
+}
+
+function playerClick() {
+      // push player move
+      // call playSound
+}
+
 //play appropriate sound for each button on click
 function playSound(evt) {
       var sounds = {
@@ -39,13 +51,16 @@ function playSound(evt) {
             yellow: yellowSound, 
             gray: graySound
             };
+      sounds[evt.target.id].currentTime = 0;
       sounds[evt.target.id].play();
 }
 
+
 //Upon clicking "Start" button
-function computerMove() {
+function startGame() {
+      generateRandomColors();
       for (var i = 0; i < computerMove.length; i++) {
-            computerMove[i].click();
+            // computerMove[i].click();
       }
       //Chosen button "lights up" and chosen sound is played
       //Counter displays current level
@@ -62,8 +77,19 @@ function generateRandomColors() {
 }
 //Computer randomly selects 1 of 4 colors
 function randomColor() {
-      computerMove = Math.floor(Math.random() * 4);
+      // computerMove = Math.floor(Math.random() * 4);
+      switch(Math.floor(Math.random() * 4)) {
+            case 0:
+                  return cyan;
+            case 1:
+                  return magenta;
+            case 2:
+                  return yellow;
+            case 3:
+                  return gray;
+      }
       return computerMove;
+      console.log(computerMove);
 }
       
 
