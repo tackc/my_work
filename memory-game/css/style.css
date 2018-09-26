@@ -4,9 +4,6 @@ html, body {
       max-height: 800px;
       background-color: #424242;
 }
-.grid {
-      border-radius: 50px;
-}
 h3 {
       color: white;
       text-align: center;
@@ -24,6 +21,9 @@ button {
       min-width: 6rem;
       border-radius: 0.75rem;
       min-height: 2rem;
+}
+.grid {
+      border-radius: 50px;
 }
 .wrapper {
       display: grid;
