@@ -7,6 +7,7 @@ var computerMove = [];
 var playerMove = [];
 var currentGame;
 var turn;
+var computerMoveIndex;
 var delay; 1000;
 
 
@@ -15,7 +16,8 @@ var cyan = document.getElementById('cyan');
 var magenta = document.getElementById('magenta');
 var yellow = document.getElementById('yellow');
 var gray = document.getElementById('gray');
-var startBtn = document.getElementById('start');
+var startBtn = document.getElementById('startBtn');
+var resetBtn = document.getElementById('resetBtn');
 var currentLevel = document.getElementById('level')
 
 var cyanSound = document.getElementById('cyanSound');
@@ -40,10 +42,34 @@ function resetGame() {
       level = "--";
       computerMove = [];
       playerMove = [];
+      startBtn.hidden = false;
 }    
 function playGame() {
       turn = 0;
-      while ()
+      computerMoveIndex = 0;
+      startBtn.hidden = true;
+      
+      // while (player hasn't hit a bad button)
+      while (turn < computerMoveIndex) {
+            if (playerClick() === computerMove.indexOf) {
+                  playerClick(computerMove);
+                  for (i=0; i < computerMove; i++) {
+                        console.log(computerMove.indexOf);
+                        turn++;
+                  }
+            } else {
+                  wrong.play();
+                  resetGame();
+            }
+      }
+      //enable ui interaction
+      //Human's turn
+            //User clicks {
+                  // validate clicks against computerMove
+                  //if correct...loop back to user clicks
+            // }
+            // else if user is wrong - tell the loop the user was wrong
+            
 }
 
 
@@ -54,20 +80,11 @@ function notEqual() {
       resetGame();
 }
 
-//compare computer array of moves to user array of moves
-function arraysEqual(comp, player) {
-      for (var i = 0; i < player.length; i++) {
-            if (comp[i] !== player[i]) {
-                  notEqual();
-            }
-      }
-}
 
 //user clicks stored in array
 function playerClick(evt) {
-      console.log(evt.target.id);
       playerMove.push(evt.target.id);
-      playSound();
+      playSound(evt);
 }
 
 //play appropriate sound for each button on click
@@ -84,10 +101,10 @@ function playSound(evt) {
 
 //Upon clicking "Start" button
 function startGame() {
+      //Counter displays current level
+      currentLevel.textContent = "1";
       generateRandomColors();
       playGame();
-      //Counter displays current level
-      level = 1;
       //Chosen button "lights up" and chosen sound is played
 }
 
@@ -115,16 +132,10 @@ function randomColor() {
       return computerMove;
 }
 
-      
-
-
-//counter that displays number of successful plays
 
 //Buttons (hamburger menu)
-
-      //button to bring the rules back up if desired
-      
-      //Possible Extras
+      //button to bring the rules back up if desired     
+//Possible Extras
             //toggle sound on/off
             //easy / hard mode button (slow / fast)
 
@@ -134,3 +145,6 @@ function randomColor() {
       //Click Button(s) (validated by comparing to random array) *** order needs to be the same
             // If correct...level counter increases by 1
             // Else...game over message appears with button allowing user to play again
+
+
+//add start over button
