@@ -6,9 +6,7 @@ var level = "--";
 var computerMove = [];
 var playerMove = [];
 var turn;
-var computerIsPlaying = true;
 var computerMoveIndex;
-// var delay; 1000;
 var firstClick = true;
 
 
@@ -40,10 +38,10 @@ resetBtn.addEventListener('click', resetGame);
 function resetGame() {
       //reset level counter to 1
       level = 0;
+      currentLevel.textContent = "--";
       computerMove = [];
-      // playerMove = [];
       startBtn.hidden = false;
-      resetBtn.style.visibility = 'hidden';
+      resetBtn.hidden = true;
 }   
 
 function lightButtonAndPlaySound(color) {
@@ -53,28 +51,28 @@ function lightButtonAndPlaySound(color) {
                   cyanSound.play();
                   setTimeout(function() {
                         cyan.classList.remove("cyan-active");
-                  }, 450)
+                  }, 400)
                   break;
             case 'magenta':
                   magenta.classList.add("magenta-active");
                   magentaSound.play();
                   setTimeout(function() {
                         magenta.classList.remove("magenta-active");
-                  }, 450)
+                  }, 400)
                   break;
             case 'yellow':
                   yellow.classList.add("yellow-active");
                   yellowSound.play();
                   setTimeout(function() {
                         yellow.classList.remove("yellow-active");
-                  }, 450)
+                  }, 400)
                   break;
             case 'gray':
                   gray.classList.add("gray-active");
                   graySound.play();
                   setTimeout(function() {
                         gray.classList.remove("gray-active");
-                  }, 450)
+                  }, 400)
                   break;
       }
       computerMoveIndex++;
@@ -89,16 +87,7 @@ function computerPlay(turn) {
             }, i * 1000);
       }
       computerMoveIndex = 0;
-}
-
-function playGame() {
-      // This initializes the new game
-      turn = 1;
-      computerMoveIndex = 0;
-      startBtn.hidden = true;
-      resetBtn.style.visibility = 'visible';
-
-      computerPlay(turn);     
+      currentLevel.textContent = turn;
 }
 
 function playerClick(evt) {
@@ -112,8 +101,6 @@ function playerClick(evt) {
             playSound(evt.target.id);
             computerMoveIndex++;
             if (computerMoveIndex === turn) {
-                  console.log("THIS SHOULD TRIGGER THE NEXT COMPUTER MOVE");
-                  // computerMoveIndex = 0;
                   firstClick = true;
                   turn++;
                   setTimeout(function() {
@@ -121,7 +108,7 @@ function playerClick(evt) {
                   }, 750);
             }
       } else {
-            // Oops!
+            // Oops! You played the wrong move
             wrong.play();
       }
 }
@@ -141,11 +128,14 @@ function playSound(color) {
 //Upon clicking "Start" button
 function startGame() {
       //Counter displays current level
-      currentLevel.textContent = turn;
+      currentLevel.textContent = 1;
+      // This initializes the new game
       generateRandomColors();
-      playGame();
-      resetBtn.style.visibility = 'visible';
-      //Chosen button "lights up" and chosen sound is played
+      turn = 1;
+      computerMoveIndex = 0;
+      startBtn.hidden = true;
+      resetBtn.hidden = false;
+      computerPlay(turn);
 }
 
 //Selected color id (1-4) is pushed into array & stored in var
@@ -178,49 +168,8 @@ function randomColor() {
 //Possible Extras
             //toggle sound on/off
             //easy / hard mode button (slow / fast)
-
-
-      
+   
 //Users turn to play
       //Click Button(s) (validated by comparing to random array) *** order needs to be the same
             // If correct...level counter increases by 1
             // Else...game over message appears with button allowing user to play again
-
-
-// //helper function to compare playerMove array to computerMove array
-// function isEqual(arr1, arr2) {
-//       var arr1Len = arr1.length;
-//       var arr2Len = arr2.length;
-//       if (arr1Len !== arr2Len) return false;
-      
-//       function compare(item1, item2) {
-//             if (!isEqual(item1, item2)) return false;
-//             else {
-//                   if (item1 !== item2) return false;
-//             }
-//       } 
-      
-//       for (var i = 0; i < arr1Len; i++) {
-//             if (compare(arr1[i], arr2[i]) === false) return false;
-//       } 
-//       if (compare(arr1[key]), arr2[key] === false) return false;
-//       return true;
-// }
-
-// // Sound ended listener function
-// function soundEnded(evt) {
-//       if (computerIsPlaying) {
-//             lightButtonAndPlaySound(computerMove[computerMoveIndex]);
-//             if (computerMoveIndex === turn) {
-//                   computerIsPlaying = false;
-//             }
-//       }
-//       computerMoveIndex = 0;
-// }
-
-//if player moves doesn't equal computer moves...you lose
-// function notEqual() {
-//       console.log('You lose');
-//       playSound(wrong);
-//       resetGame();
-// }

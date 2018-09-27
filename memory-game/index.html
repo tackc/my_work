@@ -13,11 +13,23 @@
             <div class="grid" id="cyan"></div>
             <div class="grid" id="box3"></div>
             <div class="grid" id="gray"></div>
-            <div class="grid" id="start"><button id="startbtn">Start Game</button><button id="resetbtn">Reset</button><h3>Level: <span id="level">--</span></h3></div>
+            <div class="grid" id="start">
+                  <button id="game-info">Game Info</button>
+                  <button id="startbtn">Start Game</button>
+                  <button id="resetbtn" hidden>Reset</button>
+                  <h3>Level: <span id="level">--</span></h3>
+            </div>
             <div class="grid" id="magenta"></div>
             <div class="grid" id="box7"></div>
             <div class="grid" id="yellow"></div>
             <div class="grid" id="box9"></div>
+      </div>
+
+      <div id="gameinfo" class="modal">
+            <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Some text in the Modal..</p>
+            </div>  
       </div>
 
       <audio preload="auto" id="cyanSound" src="audio/sound1.mp3"></audio>

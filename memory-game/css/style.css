@@ -9,16 +9,15 @@ h3 {
       text-align: center;
 }
 button {
-      background-color: #ededed;
       border: 0;
       color: black;
       font-family: 'Open Sans', sans-serif;
       font-weight: 900;
-      font-size: 1.2em;
+      font-size: 1.1em;
       line-height: 2;
       margin-top: 1.5rem;
       width: 60%;
-      min-width: 6rem;
+      min-width: 7rem;
       border-radius: 0.75rem;
       min-height: 2rem;
 }
@@ -37,6 +36,16 @@ button {
 #start {
       margin: auto;
       text-align: center;
+}
+#game-info {
+      background-color: transparent;
+      color: white;
+}
+#startbtn {
+      background-color: #53a774;
+}
+#resetbtn {
+      background-color: #ff6565;
 }
 #cyan {
       background-color: #00AEEF;
