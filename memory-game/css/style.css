@@ -41,24 +41,24 @@ button {
 #cyan {
       background-color: #00AEEF;
 }
-#cyan:active {
-      background-color: #80E7F9;
+#cyan:active, .cyan-active {
+      background-color: #80E7F9 !important;
 }
 #gray {
       background-color: #7C7C7C;
 }
-#gray:active {
-      background-color: #BCBCBC;
+#gray:active, .gray-active {
+      background-color: #BCBCBC !important;
 }
 #magenta {
       background-color: #EC008C;
 }
-#magenta:active {
-      background-color: #FC72D2;
+#magenta:active, .magenta-active {
+      background-color: #FC72D2 !important;
 }
 #yellow {
       background-color: #FFF200;
 }
-#yellow:active {
-      background-color: #FFFBCF;
+#yellow:active, .yellow-active {
+      background-color: #FFFBCF !important;
 }

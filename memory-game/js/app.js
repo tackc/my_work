@@ -9,6 +9,7 @@ var turn;
 var computerIsPlaying = true;
 var computerMoveIndex;
 // var delay; 1000;
+var firstClick = true;
 
 
 /*----------------------------- cached element references -----------------------------*/
@@ -34,86 +35,60 @@ gray.addEventListener('click', playerClick);
 startBtn.addEventListener('click', startGame);
 resetBtn.addEventListener('click', resetGame);
 
-cyanSound.addEventListener('ended', soundEnded);
-magentaSound.addEventListener('ended', soundEnded);
-yellowSound.addEventListener('ended', soundEnded);
-graySound.addEventListener('ended', soundEnded);
-
-
 /*----------------------------- functions -----------------------------*/
 //reset game function
 function resetGame() {
       //reset level counter to 1
       level = 0;
       computerMove = [];
-      playerMove = [];
+      // playerMove = [];
       startBtn.hidden = false;
       resetBtn.style.visibility = 'hidden';
 }   
 
-
-// Spins the CPU for a few milliseconds
-function sleep(milliseconds) {
-      var start = new Date().getTime();
-      for (var i = 0; i < 1e7; i++) {
-            if ((new Date().getTime() - start) > milliseconds){
-            break;
-            }
-      }
-}
-
 function lightButtonAndPlaySound(color) {
       switch (color) {
             case 'cyan':
-                  cyan.active = true;
-                  cyanSound.play().then(function() {
-                        console.log("playing cyan sound");
-                        cyan.active = false;
-                  });
+                  cyan.classList.add("cyan-active");
+                  cyanSound.play();
+                  setTimeout(function() {
+                        cyan.classList.remove("cyan-active");
+                  }, 450)
                   break;
             case 'magenta':
-                  magenta.active = true;
-                  magentaSound.play().then(function() {
-                        console.log("playing magenta sound");
-                        magenta.active = false;  
-                  });
+                  magenta.classList.add("magenta-active");
+                  magentaSound.play();
+                  setTimeout(function() {
+                        magenta.classList.remove("magenta-active");
+                  }, 450)
                   break;
             case 'yellow':
-                  yellow.active = true;
-                  yellowSound.play().then(function() {
-                        console.log("playing yellow sound");
-                        yellow.active = false;
-                  });
+                  yellow.classList.add("yellow-active");
+                  yellowSound.play();
+                  setTimeout(function() {
+                        yellow.classList.remove("yellow-active");
+                  }, 450)
                   break;
             case 'gray':
-                  gray.active = true;
-                  graySound.play().then(function() {
-                        console.log("playing gray sound");
-                        gray.active = false;
-                  });
+                  gray.classList.add("gray-active");
+                  graySound.play();
+                  setTimeout(function() {
+                        gray.classList.remove("gray-active");
+                  }, 450)
                   break;
       }
       computerMoveIndex++;
 }
 
-// Sound ended listener function
-function soundEnded(evt) {
-      if (computerIsPlaying) {
-            lightButtonAndPlaySound(computerMove[computerMoveIndex]);
-            if (computerMoveIndex === turn) {
-                  computerIsPlaying = false;
-            }
-      }
-      computerMoveIndex = 0;
-}
-
 function computerPlay(turn) {
       // Computer plays...
-      // console.log('computer is playing');
-      // computerIsPlaying = true;
       lightButtonAndPlaySound(computerMove[0]);
-      // computerIsPlaying = false;
-      // console.log('computer has stopped playing');
+      for (let i = 1; i < turn; i++) {
+            setTimeout(function() {
+                  lightButtonAndPlaySound(computerMove[i]);
+            }, i * 1000);
+      }
+      computerMoveIndex = 0;
 }
 
 function playGame() {
@@ -122,31 +97,28 @@ function playGame() {
       computerMoveIndex = 0;
       startBtn.hidden = true;
       resetBtn.style.visibility = 'visible';
-      var error = false;
 
       computerPlay(turn);     
 }
 
-//if player moves doesn't equal computer moves...you lose
-function notEqual() {
-      console.log('You lose');
-      playSound(wrong);
-      resetGame();
-}
-
-//user clicks stored in array
 function playerClick(evt) {
       // This is where we see if they clicked the right thing
+      if (firstClick) {
+            computerMoveIndex = 0;
+            firstClick = false;
+      }
       if (evt.target.id === computerMove[computerMoveIndex]) {
             // they clicked the right one
             playSound(evt.target.id);
             computerMoveIndex++;
             if (computerMoveIndex === turn) {
                   console.log("THIS SHOULD TRIGGER THE NEXT COMPUTER MOVE");
-                  computerMoveIndex = 0;
+                  // computerMoveIndex = 0;
+                  firstClick = true;
                   turn++;
-                  sleep(500);
-                  computerPlay(turn);
+                  setTimeout(function() {
+                        computerPlay(turn);
+                  }, 750);
             }
       } else {
             // Oops!
@@ -169,7 +141,7 @@ function playSound(color) {
 //Upon clicking "Start" button
 function startGame() {
       //Counter displays current level
-      currentLevel.textContent = "1";
+      currentLevel.textContent = turn;
       generateRandomColors();
       playGame();
       resetBtn.style.visibility = 'visible';
@@ -200,11 +172,6 @@ function randomColor() {
       return computerMove;
 }
 
-function initialize() {
-      resetBtn.style.visibility = 'hidden';   
-}
-
-initialize();
 
 //Buttons (hamburger menu)
       //button to bring the rules back up if desired     
@@ -238,4 +205,22 @@ initialize();
 //       } 
 //       if (compare(arr1[key]), arr2[key] === false) return false;
 //       return true;
+// }
+
+// // Sound ended listener function
+// function soundEnded(evt) {
+//       if (computerIsPlaying) {
+//             lightButtonAndPlaySound(computerMove[computerMoveIndex]);
+//             if (computerMoveIndex === turn) {
+//                   computerIsPlaying = false;
+//             }
+//       }
+//       computerMoveIndex = 0;
+// }
+
+//if player moves doesn't equal computer moves...you lose
+// function notEqual() {
+//       console.log('You lose');
+//       playSound(wrong);
+//       resetGame();
 // }
