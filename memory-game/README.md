@@ -26,5 +26,8 @@ Named for the children’s game “Simon Says,” inventors Ralph Baer and Howar
 * Add "hard" mode plays sequence faster
 * Add animation effect when player wins
 
+### Play the game online!
+* http://christophertack.com
+
 
 [^fn]: http://americanhistory.si.edu/collections/search/object/nmah_1302005
