@@ -168,8 +168,3 @@ function randomColor() {
 //Possible Extras
             //toggle sound on/off
             //easy / hard mode button (slow / fast)
-   
-//Users turn to play
-      //Click Button(s) (validated by comparing to random array) *** order needs to be the same
-            // If correct...level counter increases by 1
-            // Else...game over message appears with button allowing user to play again
